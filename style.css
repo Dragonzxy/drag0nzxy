@@ -1,0 +1,1425 @@
+
+.nav-list{
+    display: block;
+    color: aquamarine;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    position: relative;
+  }
+  
+  .hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: #00fff7;
+    box-shadow: 0 0 8px #00fff7;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: #00fff7;
+    box-shadow: 0 0 8px #00fff7;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger::before {
+    top: -10px;
+  }
+  
+  .hamburger::after {
+    top: 10px;
+  }
+  
+  .menu-toggle.active .hamburger {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  
+  .menu-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .menu-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  
+  /* Fullscreen Navigation Menu */
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(18, 18, 18, 0.95);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+  }
+  
+  .navbar.show {
+    
+    display: inline-block;
+    margin: 10px;
+    
+  }.nav-list a{
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  .nav-list { 
+    list-style: none;
+    margin-top: 10px;
+  
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .nav-link {
+    font-size: 2rem;
+    color: #00fff7;
+    text-decoration: none;
+    margin: 1rem 0;
+    transition: color 0.3s, text-shadow 0.3s;
+    font-weight: bold;
+  }
+  
+  .nav-link:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #00fff7;
+  }
+  
+  /* Remove toggle button on large screens (optional) */
+
+  
+
+*{
+    margin: 0; padding: 0;
+    font-family: "Open Sans", serif;
+
+    scroll-behavior: smooth;
+ 
+}
+
+/* Button Styling */
+.quick-message-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #00ffff;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s ease;
+  }
+  .quick-message-btn:hover {
+    background-color: #00ffff;
+    color: black;
+  }
+  
+  /* Message Box Styling */
+  .message-box {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: black;
+    border: 2px solid #00ffff;
+    border-radius: 15px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 0 20px #00ffff;
+    z-index: 999;
+  }
+  .message-box textarea {
+    width: 100%;
+    height: 100px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+    background-color: #111;
+    color: white;
+    font-family: sans-serif;
+  }
+  .message-box button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    background-color: #00ffff;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .message-box button:hover {
+    box-shadow: 0 0 15px #00ffff;
+  }
+  
+  /* Hide Box by Default */
+  .hidden {
+    display: none;
+  }
+  
+
+body.light-theme {
+    background-color: #f4f4f4; /* Soft light background */
+    color: #333333; /* Dark text for contrast */
+}
+
+body.light-theme .text,
+body.light-theme p,
+body.light-theme .card,
+body.light-theme .card2,
+body.light-theme footer,
+body.light-theme .headline,
+body.light-theme .head,
+body.light-theme .left,
+body.light-theme .right,
+body.light-theme .contact
+
+{
+    background-color: #ffffff; /* White background */
+    color: #333333 !important; /* Dark text */
+    border: 2px solid #ff7b93; /* Soft neon pink border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 15px; /* Padding for spacing */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); /* Red shadow for a neon effect */
+}
+
+body.light-theme .nav a,
+body.light-theme a,
+body.light-theme i {
+    color: #ff7b93 !important; /* Soft neon pink for links */
+}
+
+body.light-theme #bg {
+    opacity: 0.05;
+}
+
+body.light-theme .btn a,
+body.light-theme .theme-btn {
+    background-color: #7ae7ff; /* Soft neon blue for buttons */
+    color: white;
+    box-shadow: 0 0 10px rgba(122, 231, 255, 0.4); /* Soft blue glow */
+}
+
+body.light-theme #hire,
+body.light-theme #con,
+body.light-theme #hireme {
+    background-color: #a7ff7a; /* Soft neon green */
+    color: #000;
+    border: 2px solid #ff7b93; /* Neon pink border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); /* Red shadow */
+}
+
+body.light-theme i {
+    background-color: #ffcb44; /* Soft neon yellow for icons */
+    border-color: #ff7b93; /* Neon pink border */
+}
+
+body.light-theme .card2:hover,
+body.light-theme .btn:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6); /* Brighter red glow on hover */
+}
+
+/* Neon Red for all span text */
+body.light-theme span {
+    color: #ff0000 !important; /* Neon red color */
+}
+
+
+
+
+
+
+
+#msg{
+    margin-right: 20px;
+    width:400px;
+    height: 350px;
+}.theme-btn {
+    background-color: aqua;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    box-shadow: 0 0 15px aqua;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+
+body{
+ 
+    background-color: rgb(0, 0, 0);
+  
+}
+#bg{right: 0;
+    top: 0; 
+    position: fixed;
+z-index: -8;
+   min-height: 100vh;
+    min-width: 100vw;
+    opacity: .7;
+}
+* a:link, a:visited {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: azure;
+}
+
+header{
+    transition: ease-in .1s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.logo{
+    text-transform: capitalize;
+ text-shadow: 0 0 20px white;
+ cursor: pointer;
+ font-size: x-large;
+ margin-left: 50px;
+    color: aqua;padding:20px 10px;
+}
+.nav a{padding: 5px;
+    font-size: large;
+    transition: ease .1s;
+    
+  margin-right: 20px;
+}
+.btn:hover{
+    color: aqua;
+    transition: ease .1s;
+}
+#btn{
+    color:aqua ;
+}
+.nav{
+    margin-right: 20px;
+}
+main{
+    display: flex;justify-content: space-between;
+
+}
+.text{
+width: 50%;
+
+}
+
+.img img{
+     border: solid 3px black;
+    height: 40vh;
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-right: 100px;
+    transition: ease .2s;
+    cursor: pointer;
+    box-shadow: 0 0 15px aqua;
+ }
+ .img img:hover{
+
+    transition: ease .2s;
+
+    box-shadow: 0 0 40px 5px aqua;
+ }
+ main .text{
+    padding: 10px;
+    margin-top: 200px;
+    margin-left: 50px;
+    color: white;
+    text-transform: capitalize;
+    
+ }
+ .text span{
+    color: aqua;
+ }
+ .text p{
+    margin-top: 20px;
+    width: 70%;
+ }
+ .icon{
+    display: inline-block;
+    margin-right:20px;
+ }
+ i{
+    background: transparent;
+
+    border-radius: 50%;
+    display: inline-block;
+    transition: ease .5s;
+font-size: large;
+margin-top: 20px;
+color: aqua;
+border: solid 2px aqua;
+padding:5px;
+cursor: pointer;
+backdrop-filter: blur(15px);
+margin-right: 25px;
+align-items: center;
+justify-content: space-between;
+  
+ }
+i:hover{
+    background-color: aqua;
+ transform: scale(1.5);
+ border: solid 2px aqua;
+    display: inline-block;
+    transition: ease .3s;
+    color: white;
+}
+.btn{
+left: 0;
+    margin-top: 50px;
+  
+}
+.btn a{background-color: transparent;
+border-radius: 30px;
+padding: 10px;
+
+border: solid 2px aqua;
+
+color:aqua ;
+    margin-top: 20px;
+    padding: 10px;
+}
+#con{
+    margin-left: 20px;
+    padding:7px 20px;
+    transition: ease .3s;
+    box-shadow: 0 0 20px aqua;
+}
+#con:hover{
+    background-color: aqua;
+    transition: ease .3s;
+    color: black;
+
+}
+
+#hire{
+padding:7px 25px;
+background-color: aqua;
+color: black;
+box-shadow: 0px 0px 20px aqua;
+
+}
+#hire:hover{
+    transform:scale(1.5);
+    transition: ease .3s;
+    box-shadow: 0px 0px 30px aqua;
+
+
+}
+.card-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+footer{
+    text-align: center;
+    color: white;
+    margin-top: 20%;
+}
+span{
+    color: aqua;
+
+    
+}
+
+
+.card span{
+    color: aqua;
+    font-size: xx-large;
+    
+}
+.headline{
+    text-align: center;
+    text-transform: capitalize;
+    padding: 20px;
+    color: aliceblue;
+    display: block;
+}
+i{
+    display: block;
+    font-size: x-large;
+    padding: 10px;
+    margin: 10px;
+}
+.card{
+    text-align: center;
+    box-shadow: 0px 0px 25px aqua;
+    padding:100px;
+    margin-left: 50px;
+    border: solid 2px aqua;
+    margin-right:50px ;
+    min-width: 300px;
+    max-width: 300px;
+    border-radius: 25px;
+    min-height: 250px;
+    max-height: 250px;
+    transition: ease-in .3s;
+  background-color: rgb(22, 21, 21);
+    justify-content: space-between;
+}
+.card:hover{
+    box-shadow: 0 0 25px aqua;
+    transition: ease-in .3s;
+}
+.card p{
+    text-align: justify;
+    color: aliceblue;
+    padding: 20px;
+}
+.service{
+    display: flex;margin: 10px;padding: 10px;
+text-transform: capitalize;
+}
+.headline2{
+    text-transform: capitalize;
+color: black;
+font-weight: bolder;
+padding: 10px;
+font-size: xx-large;
+margin-right: 80%;
+
+}
+.card2{
+    color:black;
+    box-shadow: 0px 0px 20px aqua;
+    background-color: aqua;
+    min-height: 251px;
+    min-width: 500px;
+    transition: ease .3s;
+    padding: 10px;
+    margin-left: 30px;
+    margin-right: 20px;
+    border-radius: 25px;
+}
+.card2 p{
+    margin-top: 50px;
+font-weight: bolder;
+    color: black;
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.card2:hover{
+    background-color: aliceblue;
+    transition: ease .3s;
+
+}
+
+.head{
+    text-align: center;
+    color: aqua;
+    text-transform: capitalize;
+    font-size: xx-large;
+    font-weight: bolder;
+    padding: 10px;
+}
+.education{
+    margin-top: 30px;
+    text-transform: capitalize;
+    color: aliceblue;
+  align-items: center;
+    justify-content: space-evenly;
+    color: white;
+
+    display: flex;
+}
+.left{
+    transition: .2s ease;
+    text-align: right;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 20px aqua;
+    border: 2px solid aqua;
+    min-width: 500px;
+    margin-left: 100px;
+    padding: 20px;
+   margin-bottom:500px ;
+    max-width: 500px;
+    background-color: black;
+    border-radius: 70px;
+}
+.middle{
+    display: inline-block;
+    box-shadow: 0px 0px 20px aqua;
+   min-width: 3px;
+   max-width: 3px;
+   margin-left:10px ;
+   border-radius: 30px;
+   color: aqua;
+   background-color: aqua;
+    min-height: 600px;
+}
+.right{
+    transition: .2s ease;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    box-shadow: 01px 01px 20px aqua;
+    margin-top:300px ;
+    border: 2px solid aqua;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: black;
+    margin-right: 200px;
+    border-radius: 70px;
+    min-width: 500px;
+    max-width: 500px;
+}
+.left:hover{
+background-color: aqua;
+color: black;
+transition: .2s ease;
+font-weight: bold;
+}
+.right:hover{
+    background-color: aqua;
+    color: black;
+    transition: .2s ease;
+    font-weight: bold;
+    }
+
+
+.contact{ 
+    border: 2px aqua solid;
+    box-shadow: 0 0 25px aqua;
+      min-height: 400px;
+    max-height: 400px;
+    border-radius: 25px;
+    margin-left: 100px;
+    min-width: 800px;
+    max-width: 800px;
+justify-content: space-between;
+    background-color: rgb(37, 37, 37);
+    margin: 10px;padding: 10px;
+    display: flex !important;
+}
+input::placeholder{
+    transition: .2s ease;
+    text-transform: capitalize;
+    font-size: medium;
+    color: gray
+}
+input{margin: 5px;
+  
+    transition: .2s ease;
+    background-color: rgb(58, 58, 58);
+outline: none;border-radius: 25px;
+   
+    border: none;
+    padding: 10px;
+    height: 50px;width: 250px;
+}
+input:hover{
+    border: 1px aqua solid;
+    background: gray;
+}
+
+#msg{
+  
+  
+    margin-right: 20px;
+    width:400px!important;
+    height: 350px!important;
+}
+#hireme{
+    box-shadow: 01px 01px 20px aqua;
+    display: inline-block;
+    margin: 20px;padding: 10px 15px;
+    color: black;
+    border: 1px black solid;
+    
+    border-radius: 10px;
+    background-color: aqua;
+}
+#hireme:hover{
+    transform:scale(1.1);
+    transition: ease .3s;
+    box-shadow: 0px 0px 30px aqua;
+
+
+}
+
+footer{
+    display:  block;
+margin-bottom: 1px;
+}
+
+
+
+@media (max-width: 500px) {
+
+
+
+
+
+
+
+
+
+
+
+    /* Navbar Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: black;
+}
+
+.logo {
+    color: aqua;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: large;
+    transition: 0.3s ease;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Media Queries for Mobile and Tablet */
+@media (max-width: 768px) {
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    /* Hide nav links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Show toggle button */
+    .toggle-btn {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        color: aqua;
+        padding: 10px;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+    /* Header adjustments */
+    header {
+        flex-direction: row;
+        padding: 10px 0;
+    }
+.nav{
+    display: flex;
+    font-size: small;
+margin-right: 10px;
+}
+.nav .btn{
+    padding: 15px
+    ;
+}
+    .logo {
+        margin-left: 0;
+        text-align: center;
+        font-size: large;
+    }
+
+    .nav {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .nav a {
+        display: block;
+        margin: 10px 0;
+        padding: 8px 0;
+    }
+
+    /* Main content adjustments */
+    main {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .text {
+        width: 90%;
+        margin: 50px 0 0 0;
+        text-align: center;
+    }
+
+    .text p {
+        width: 100%;
+    }
+
+    .img img {
+        margin: 50px 0;
+        height: 30vh;
+        width: 30vh;
+        margin-right: 0;
+    }
+
+    /* Card sections adjustments */
+    .card-box, .service {
+        flex-direction: column;
+    }
+
+    .card, .card2 {
+        margin: 20px auto;
+        min-width: 80%;
+        max-width: 80%;
+        padding: 30px;
+    }
+
+    .headline2 {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    /* Education timeline adjustments */
+    .education {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        min-width: 90%;
+        max-width: 90%;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .middle {
+        display: none;
+    }
+
+    .right {
+        margin-top: 20px;
+        margin-right: 0;
+    }
+
+    /* Contact form adjustments */
+    .contact {
+        flex-direction: column;
+        min-width: 90%;
+        max-width: 90%;
+        padding: 20px;
+        min-height: auto;
+    }
+
+   
+
+    /* Button adjustments */
+    .btn {
+        text-align: center;
+    }
+
+    #hire {
+        margin-top: 20px;
+    }
+
+    /* Icon adjustments */
+    i {
+        margin: 15px auto;
+    }
+
+    /* Utility adjustments */
+    #bg {
+        display: none;
+    }
+    input{
+        width: 200px;
+    }
+    }
+ 
+.contact{
+    flex-direction: column;
+    height: 1200px;
+    width:320px;
+
+}
+footer{
+    display:  block;
+margin-bottom: 1px;
+}
+
+
+#msg {
+    display: none;
+    width: 90% ;
+    height: 200px ;
+    margin-right: 0;
+}
+
+
+
+@media (max-width: 480px) {
+
+
+/* Navbar Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: black;
+}
+
+.logo {
+    color: aqua;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: large;
+    transition: 0.3s ease;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Media Queries for Mobile and Tablet */
+@media (min-width: 768px) {
+
+    /* Hide nav links by default */
+
+
+
+
+    .logo {
+        font-size: large;
+    }
+
+    .nav a {
+        font-size: medium;
+        padding: 3px;
+    }
+
+    .text {
+        margin: 10px 0;
+        font-size: small;
+    }
+
+    .text p {
+        width: 100%;
+        font-size: smaller;
+    }
+
+    .img img {
+        border-radius: 50%;
+        height: 25vh;
+        width: 25vh;
+    }
+
+    .btn a {
+        font-size: small;
+        padding: 8px;
+    }
+
+    .card, .card2 {
+        padding: 20px;
+        font-size: small;
+    }
+
+    .card p {
+        padding: 10px;
+    }
+
+    .headline, .head {
+        font-size: large;
+        padding: 10px;
+    }
+
+    .headline2 {
+        font-size: large;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .left, .right {
+        padding: 15px;
+        font-size: small;
+    }
+
+    .contact {
+        padding: 15px;
+    }
+
+    input {
+        font-size: small;
+        height: 40px;
+    }
+
+
+    #hireme {
+        font-size: small;
+        padding: 8px 12px;
+    }
+
+    i {
+        font-size: medium;
+        margin: 5px;
+        padding: 6px;
+    }
+}
+
+
+#msg {
+    display: none;
+    width: 95% ;
+    height: 120px ;
+}
+}
+
+  
+
+
+
+
+
+
+/* Responsive Styles for Smaller Laptops */
+@media (min-width: 1024px) and (max-width: 1365px) {
+    header {
+      padding: 25px 40px;
+      justify-content: space-between;
+    }
+  
+    .logo {
+      font-size: 2rem;
+      margin-right: 30px;
+    }
+  
+    .menu-toggle {
+      display: none;
+    }
+  
+    .navbar {
+      display: flex !important;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      width: auto;
+      background-color: transparent;
+      padding: 0;
+    }
+  
+    .nav-list {
+      flex-direction: row;
+      gap: 25px;
+    }
+  
+    .nav-link {
+      font-size: 1.1rem;
+    }
+  
+    main {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 50px;
+    }
+  
+    .text {
+      width: 50%;
+      font-size: 1.2rem;
+    }
+  
+    .text p {
+      margin-top: 15px;
+    }
+  
+    .img img {
+      height: 45vh;
+      margin-right: 40px;
+    }
+  
+    .card-box {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 40px;
+      gap: 20px;
+    }
+  
+    .card {
+      max-width: 30%;
+      margin: 0;
+      padding: 25px;
+    }
+  
+    .service {
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: stretch;
+      padding: 40px 50px;
+      gap: 30px;
+    }
+  
+    .education {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 50px;
+      gap: 40px;
+    }
+  
+    .left, .right {
+      max-width: 40%;
+      padding: 30px;
+    }
+  
+    .middle {
+      display: block;
+      width: 5px;
+      background-color: #ddd;
+      height: auto;
+    }
+  
+    .contact {
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 90%;
+      padding: 40px 50px;
+      margin: 0 auto;
+      gap: 30px;
+    }
+  
+    .message-box {
+      right: 20px;
+      bottom: 120px;
+      width: 350px;
+    }
+  
+    .quick-message-btn {
+      right: 20px;
+      bottom: 30px;
+    }
+  }
+  
+
+
+
+
+
+
+/* Responsive Styles for Tablet Devices */
+@media (min-width: 768px) and (max-width: 1023px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+  
+    .logo {
+      margin: 10px 0;
+      font-size: 1.8rem;
+    }
+  
+    .menu-toggle {
+      display: flex;
+      margin-bottom: 20px;
+    }
+  
+    .navbar {
+      display: none; /* Hidden by default until toggled */
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(18, 18, 18, 0.95);
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .navbar.show {
+      display: flex !important;
+    }
+  
+    .nav-list {
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .nav-link {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+  
+    main {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+  
+    .text {
+      width: 90%;
+      text-align: center;
+      margin-top: 50px;
+      font-size: 1.1rem;
+    }
+  
+    .text p {
+      width: 100%;
+      margin-top: 15px;
+    }
+  
+    .img img {
+      height: 35vh;
+      margin-top: 30px;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  
+    .card-box {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 20px;
+    }
+  
+    .card {
+      margin: 20px 0;
+      max-width: 90%;
+    }
+  
+    .service {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      gap: 30px;
+    }
+  
+    .education {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+      gap: 40px;
+    }
+  
+    .left, .right {
+      max-width: 90%;
+      margin: 20px 0;
+      padding: 30px;
+    }
+  
+    .middle {
+      display: none; /* Hide vertical line on tablets */
+    }
+  
+    .contact {
+      flex-direction: column;
+      align-items: center;
+      max-width: 90%;
+      padding: 20px;
+      margin: 20px auto;
+      gap: 20px;
+    }
+  
+    .message-box {
+      right: 10px;
+      bottom: 100px;
+      width: 90%;
+    }
+  
+    .quick-message-btn {
+      right: 10px;
+      bottom: 20px;
+    }
+  }
+  
+
+
+
+/* Responsive Styles for Laptop Devices */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    header {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px;
+    }
+  
+    .main {
+      flex-direction: row;
+      padding: 20px;
+    }
+  
+    .text {
+      width: 50%;
+      margin-top: 100px;
+      font-size: 1.1rem;
+    }
+  
+    .img img {
+      height: 45vh;
+      margin-right: 50px;
+    }
+  
+    .navbar {
+      display: flex !important;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      position: static;
+      height: auto;
+      background-color: transparent;
+    }
+  
+    .menu-toggle {
+      display: none;
+    }
+  
+    .nav-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+  
+    .nav-link {
+      font-size: 1.2rem;
+    }
+  
+    .card-box {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  
+    .card {
+      margin: 20px;
+      min-width: 280px;
+    }
+  
+    .service {
+      flex-wrap: wrap;
+    }
+  
+    .education {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .left, .right {
+      margin: 20px;
+      max-width: 45%;
+      min-width: 300px;
+    }
+  
+    .contact {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: auto;
+      max-width: 90%;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+  body {
+    zoom: 0.97; 
+    overflow-x: hidden;
+  }
+
+  html, body {
+
+    width: 100vw
+  }
+  footer{
+    margin-bottom: -300px;
+  }
