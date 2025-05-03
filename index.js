@@ -48,6 +48,13 @@ navToggle.addEventListener('click', () => {
   navMenu.classList.toggle('show');
   navToggle.classList.toggle('active');
 });
+const preloader = document.getElementById("preloader")
+window.addEventListener("load", e=>{
+setTimeout(e => {
+    preloader.style.display ="none"
+}, 1000);    
+})
+
 
 
 
