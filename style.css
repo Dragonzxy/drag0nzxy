@@ -1,4 +1,22 @@
+#preloader{
+  background: url(https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif?cid=ecf05e47mblyw256hmqugm52lcyccqh1w6sp9ord6wquvj2n&ep=v1_gifs_search&rid=giphy.gif&ct=g) no-repeat ;
+  background-position-x: center;
+background-position-y: 250px;
+backface-visibility: .5;
+  position: absolute;
+  background-color: #000000;
+width: 100vw;z-index: 999;
+transition: .3s ease;
+height:150vh;
+}
 
+.body{
+  background-color: #000;
+}
+body{
+  transition: .3s ease;
+  height: 100%;
+}
 .nav-list{
     display: block;
     color: aquamarine;
@@ -283,7 +301,9 @@ body.light-theme span {
 
 
 body{
- 
+  position: relative;
+overflow-x: hidden;
+zoom: .95;
     background-color: rgb(0, 0, 0);
   
 }
